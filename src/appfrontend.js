@@ -261,4 +261,10 @@ Rating :{product[index].rating} <br />
 } // App end
 
 
+
+
+
+
+
+
 export default App;
