@@ -44,7 +44,7 @@ function App() {
         console.log(id);
         if (id >= 1 && id <= 20) 
         {
-            fetch("http://127.0.0.1:4000/api/getFromId/" + id)
+            fetch("http://localhost:3000/api/item/" + id)
             .then((response) => response.json())
             .then((data) => {
             console.log("Show one product :", id);
@@ -108,7 +108,7 @@ function App() {
 	{
 	    e.preventDefault();
 	    console.log(e.target.value);
-	    fetch("http://127.0.0.1:4000/api/create", {
+	    fetch("http://localhost:3000/api/create", {
 	    method: "POST",
 	    headers: { "Content-Type": "application/json" },
 	    body: JSON.stringify(addNewProduct),
@@ -143,7 +143,7 @@ function App() {
 	}
 	function deleteOneProduct(deleteid) {
 	    console.log("Product to delete :", deleteid);
-	    fetch("http://localhost:4000/api/delete", {
+	    fetch("http://localhost:3000/api/delete", {
 	    method: "DELETE",
 	    headers: { "Content-Type": "application/json" },
 	    body: JSON.stringify({"id":deleteid}),
@@ -170,7 +170,7 @@ function App() {
         }, [checked4]);
 
         function getAllProducts() {
-        fetch("http://127.0.0.1:4000/api/get")
+        fetch("http://localhost:3000/api/item")
         .then((response) => response.json())
         .then((data) => {
         console.log("Show Catalog of Products :");
